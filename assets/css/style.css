@@ -78,7 +78,7 @@ p {
   padding-bottom: 20px;
   text-align: center;
   font-size: 2em;
-  font-weight: bold;
+  /*font-weight: bold;*/
   color: #ffffff;
 }
 
