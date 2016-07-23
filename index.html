@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV Toddler Cage Match</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrapYeti.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+   <!--link to JavaScript-->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Chau+Philomene+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+  
+  </head>
+  
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <h3>Be very afraid...</h3> 
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav navbar-right">
+                  <a href= "index.html">TV Toddler MMA Cage Match!</a> 
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container-fluid full">
+      <div class="row">
+      <div class="col-sm-12">
+         <h4>Your character</h4>
+       <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player1.png" alt="Ike">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player2.png" alt="Maggie">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player3.png" alt="Michelle">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?"">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player4.png" alt="Stewie">
+                </a>
+            </div>
+       <!-- <button onclick="#us"><img class="img-responsive img-hover img-related" src="assets/images/ike.png" alt="Ike"></button> -->
+      <!-- <a href="ike">
+                    <img class="img-responsive img-hover img-related" src="assets/images/ike.png" alt="Basic Portfolio">
+                </a> -->
+           <!--  <img src="assets/images/ike.png" class="img-responsive" id="player1" alt="Hangman drink image">
+            <img src="assets/images/maggie.png" class="img-responsive" id="player2" alt="Hangman drink image">
+            <img src="assets/images/m-tanner.png" class="img-responsive" id="player3" alt="Hangman drink image">
+            <img src="assets/images/stewie.png" class="img-responsive" id="player4" alt="Hangman drink image"> -->
+           
+        </div>
+      </div>
+    </div>
+
+     <div class="container-fluid full">
+      <div class="row">
+      <div class="col-sm-10">
+      <h4>Available enemies</h4>
+       <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player2.png" alt="Ike">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player1.png" alt="Maggie">
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                    <img class="img-responsive img-hover img-related" src="assets/images/player3.png" alt="Michelle">
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container">
+      <div class="row">
+        <!--defender area -->
+        <div class="col-sm-4">
+       <h4>Fight Section</h4>
+       <button onclick="someFunction()">Attack!</button>
+       <h4>Defender</h4>
+         <img src="assets/images/player4.png" class="img-responsive" id="us" alt="Hangman drink image">
+         <p id="us-stats"></p>
+        <p id="them-stats"></p>
+        
+        </div>
+
+      <div class="col-sm-5">
+         <!-- place for status updates -->
+
+        <p id="us-stats">update what we did</p>
+        <p id="them-stats">update what they did</p>
+        <p id="win-loss"></p>
+         <!--  defender area -->
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script>
+
+var players = {
+  
+  "contestants":[
+    {
+      "name":"Ike Broflovski",
+      "health-points":""
+      "attack-power":""
+      "counter-attack-power": ""
+
+    },
+    {
+      "name":"Maggie Simpson",
+      "health-points":""
+      "attack-power":""
+      "counter-attack-power":""
+    }, 
+    {
+      "name":"Michelle Tanner",
+      "health-points":""
+      "attack-power":""
+      "counter-attack-power":""
+    },
+    {
+      "name":"Stewie Griffin",
+      "health-points":""
+      "attack-power":""
+      "counter-attack-power":""
+    }
+  ],
+  
+}
+
+</script>
+
+</body>
+</html>
+
