@@ -28,15 +28,9 @@ h4  {
 
 p {
   color: #ffffff;
-  ffont-family: 'Chelsea Market','Chau Philomene One', sans-serif;
+  font-family: 'Chelsea Market','Chau Philomene One', sans-serif;
   font-size: 18px;
 }
-
-#letterGuess {
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
-    font-size: 20px;
-}
-
 
 .col-sm-12 {
   margin-top: 70px;
@@ -47,41 +41,108 @@ p {
   margin-top: 15px;
   float: left;
 }
-.col-sm-3 {
-  width: 150px;
-}
 
-.col-sm-5 {
-  background-color: #ffffff;
-    padding: 50px;
-    margin-bottom: 0px;
-    margin-top: 95px;
-    margin-left: 10px;
-    margin-right: 0px;
-}
-
+#column>p,
 .col-sm-5>p {
   color: black;
   font-size: 14px;
 }
 
-.col-sm-4 {
-  width: 150px;
+button {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 110px;
+
 }
 
-.col-sm-4>h4 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+
+.container{
+ margin:10px;
+ padding:10px;
+ width: 100%;
+
 }
-#display {
-  margin-top: 40px;
-  padding-bottom: 20px;
+
+#ike,
+ #maggie,
+ #michelle,
+#stewie,
+.playerArea{
+ width:150px;
+ min-height:125px;    
+/* padding:5px;    
+*/  margin:5px;
+ 
+  background:#fff;
+  font-size:14px;
+ text-align: center;
+  display:inline-block;
+  position:relative;
+  float:left;
+  border-style: solid;
+  border-color: green;
+  border-width: 10px;
+}
+ #ike,
+ #maggie,
+ #michelle,
+#stewie,
+.playerArea span {
+/* border-bottom:1px solid lightgray;
+*/ /*margin:10px 0px 10px 0px;
+ padding:10px 0px 10px 0px;*/
+ display:block;    
+ font-size:16px;
+ color: black;
+ font-weight:bold;
+}
+
+.playerArea.imgcontainer img{
+ max-width:100%;
+ background:#ccc;
+ display:block;
+}
+
+#stats-area {
+  width:300px;
+  min-height: 230px;
+  margin:5px;
+  margin-right: 300px;
+  background:#fff;
+  font-size:14px;
+  display:inline-block;
+  /*position:relative;*/
+  float:right;
+  border-style: solid;
+  border-color: #0000ff;
+  border-width: 10px;
+}
+.img-responsive {
+  padding-top: 10px;
+}
+
+img {
+  width: 125px;
+}
+#win-loss,
+#statusUpdate {
+  font-size: 14px;
+  color: black;
+  font-family: Arial;
   text-align: center;
-  font-size: 2em;
-  /*font-weight: bold;*/
-  color: #ffffff;
+  margin-left: 10px;
+}
+#ike-health,
+#maggie-health,
+#michelle-health,
+#stewie-health {
+font-size: 12px;
 }
 
+.charName {
+  text-align: center;
+}
+ 
 .navbar-inverse  {
   background-color: black;
   height: 70px;
@@ -102,6 +163,4 @@ color: #a6843f;
 .navbar-right {
   margin-top: 10px;
 }
-  .container  {
-  width: 100%;
-}
+  
