@@ -67,7 +67,7 @@ button {
  #maggie,
  #michelle,
 #stewie,
-.playerArea{
+.playerArea {
  width:150px;
  min-height:125px;    
 /* padding:5px;    
@@ -83,6 +83,8 @@ button {
   border-color: green;
   border-width: 10px;
 }
+
+
  #ike,
  #maggie,
  #michelle,
