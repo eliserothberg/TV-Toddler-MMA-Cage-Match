@@ -139,6 +139,10 @@ img {
 font-size: 12px;
 }
 
+#enemyArea {
+  height: 150px;
+}
+
 .charName {
   text-align: center;
 }

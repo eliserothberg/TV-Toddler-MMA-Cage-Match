@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV Toddler Cage Match</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrapYeti.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+   <!--link to JavaScript-->
+<!--     <script type="text/javascript" src="assets/javascript/game.js"></script>
+ -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Chau+Philomene+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+  
+  </head>
+  
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <h3>Be very afraid...</h3> 
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav navbar-right">
+                  <a href= "index.html">TV Toddler MMA Cage Match!</a> 
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <div class="container">
+      <div class="row">
+      <div class="col-sm-12">
+         <h4>Choose Your character</h4>
+           <div class="column1">
+           
+           <span class="charName">Ike Broflovski</span>
+   <div class="img"><img id="img1" src="assets/images/player1.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  </div>  
+   <div class="column1">
+           
+           <span class="charName">Maggie Simpson</span>
+   <div class="img"><img id="img2" src="assets/images/player2.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  </div>  
+
+   <div class="column1">
+          
+           <span class="charName">Michelle Tanner</span>
+   <div class="img"><img id="img3" src="assets/images/player3.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  </div>  
+   <div class="column1">
+           
+           <span class="charName">Stewie Griffen</span>
+   <div class="img"><img id="img4" src="assets/images/player4.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+ 
+  </div>
+  </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="container">
+      <div class="row">
+      <div class="col-sm-10">
+      <h4>Choose Your Enemy</h4> <!-- turn the outsode boxes red-->
+       <div class="column2-0">
+           
+           <!-- <span class="charName">Maggie</span>
+   <div class="img"><img id="img5" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div>  
+
+   <div class="column2">
+          
+          <!--  <span class="charName">Michelle</span>
+   <div class="img"><img img id="img6" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div>  
+   <div class="column2">
+           
+          <!--  <span class="charName">Stewie</span>
+   <div class="img"><img img id="img7" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div>  
+  </div>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container">
+      <!-- <div class="row"> -->
+        <!--defender area -->
+        <div class="col-sm-10">
+       <h4>Rumble!</h4>
+       <div id="column3">
+       <!-- <h4>Defender</h4> -->
+           
+          <!--  <span class="charName">Maggie</span>
+   <div class="img"><img img id="img8" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div> 
+      <!--  <button onclick="someFunction()">Attack!</button> --> <!-- turn the outside box black-->
+       
+        
+        <!--  <p id="us-stats"></p>
+        <p id="them-stats"></p> -->
+        
+<!--         </div>
+
+      <div class="col-sm-5"> -->
+         <!-- place for status updates -->
+<div id="column">
+        <button onclick="someFunction()">Attack!</button>
+        <p id="us-stats">update what we did</p>
+        <p id="them-stats">update what they did</p>
+        <p id="win-loss"></p>
+         <!--  defender area -->
+
+         <button onclick="newGame()">Reset</button>
+   </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script>
+
+// $(document).ready(function() {
+
+  var player = []
+    // chosen: '',
+    // enemies: [],
+    // fighter: '',
+    choices: {
+     player[0] = {
+        name:"Ike Broflovski", 
+        healthPoints:140, 
+        counterAttackPower:5,
+        attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    }
+    player[1] = { 
+      name:"Maggie Simpson", 
+      healthPoints:150,
+      counterAttackPower:5, 
+      attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    }
+    player[2] = { 
+      name:"Michelle Tanner", 
+      healthPoints:200, 
+      counterAttackPower:5,
+      attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    }
+    player[3] = { 
+      name:"Stewie Griffin", 
+      healthPoints:125, 
+      counterAttackPower:5,
+      attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    },
+
+// },
+// },
+
+
+
+// $.each(player, function(index, val) {
+//     console.log(val.name);
+//     // for (var i = 0; i < 4; i++) {
+// // document.getElementById("player." + index).innerHTML = val.name;
+// // }
+
+// }),
+// for (var i = 0; i < player.length; i++) {
+// console.log(player[i]);
+// }
+//This raises a click event from within another function
+//this would fire when the element pickOtherID was clciked and raise the click event for pickID
+// $('pickID').click(function() {
+//     $('pickOtherID').click();
+// })
+// $('.img').on("click","a,img", function (e) {
+//       e.preventDefault();
+      // console.log('You Clicked Me');
+
+ // });
+//CLick function to do something
+// $('img').click(function(){
+    // console.log($(this).html());  
+    // if($(this).attr('id') == 'img1')
+    //      {
+    //         console.log('Ike!');
+    //      }
+    //     if($(this).attr('id') == 'img2')
+    //      {
+    //         console.log('Maggie!');
+    //      }
+    //      if($(this).attr('id') == 'img3')
+    //      {
+    //         console.log('Michelle!');
+    //      }
+    //      if($(this).attr('id') == 'img4')
+    //      {
+    //         console.log('Stewie!');
+    //      }
+// });
+// };
+
+$(function () {
+    // When one an image within your columns class is clicked
+    $('.column1').click(function () {
+         // Update the source for every one of the images (besides the current one)
+         $('.column1').not(this).each(function(){
+          console.log("not this");
+           
+             // Change the source for all other elements
+             $(this).clone().appendTo($('.column2-0'))
+              $(this).remove();
+// });
+});
+           });
+         });
+    //FUNCTION TO split up the COLUMNS again
+
+$(function () {
+    // When one an image within your columns class is clicked
+    $('.column2-0').click(function () {
+         // Update the source for every one of the images (besides the current one)
+         // $(this).each(function(){
+          console.log("yes this");
+             // Change the source for all other elements
+             $(this).clone().appendTo($('#column3'))
+              $(this).remove();
+});
+});
+           };
+         // });
+
+// $(document).ready(function() {
+//     $("#column2").on("click", function() {
+//         var row = $(this).closest("#column2").remove().clone();
+//         row.find("img.move-row")
+//             .attr("src", "remove_image_path.jpg")
+//             .attr("alt", "Remove");
+//         $("#table_dest tbody").append(tr);
+//     });
+
+//     $("#column3").on("click"," img.move-row", function() {
+//         var tr = $(this).closest("tr").remove().clone();
+//         tr.find("img.move-row")
+//             .attr("src", "#column3")
+//             .attr("alt", "Move");
+//         $("#table_source tbody").append(tr);
+//     });
+// });
+
+ // $('img').bind('click', function (evt)
+ //       {
+ //         if($(this).attr('id') == 'img1')
+ //         {
+ //            console.log('Ike!');
+ //         }
+ //        if($(this).attr('id') == 'img2')
+ //         {
+ //            console.log('Maggie!');
+ //         }
+ //         if($(this).attr('id') == 'img3')
+ //         {
+ //            console.log('Michelle!');
+ //         }
+ //         if($(this).attr('id') == 'img4')
+ //         {
+ //            console.log('Stewie!');
+ //         }
+ //       });
+
+    // $(".column").click(function(){
+    //     $(this).fadeOut();
+    // });
+
+      // $(selector).select(function)function() {
+      //       $('.char').on('click', function() {
+        // $("img").click(function(){
+        //       $('.choice').html('You: ');
+        //       if ($(this).attr('id') == "player0") {
+        //         console.log(player.choices.player0.name);
+        //       } else if ($(this).attr('id') == "player1") {
+        //         console.log(player.choices.player1.name);
+        //       } else if ($(this).attr('id') == "player2") {
+        //         console.log(player.choices.player2.name);
+        //       } else if ($(this).attr('id') == "player3") {
+        //         console.log(player.choices.player3.name);
+        //       }
+        //     });
+        //   // });
+        //     console.log(player.choices.player3.name);
+
+
+          
+// $.each(player, function () {
+  
+// document.getElementById("character2").innerHTML = val.name;
+// console.log(val.name);
+// console.log("stats[i]" + player[i].healthPoints);
+
+// });
+// console.log("character[i]").innerHTML = player[i].firstName + player[i].lastName
+// console.log("stats[i]").innerHTML = player[i].healthPoints
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+//   }
+// for (var i = 1; i < 5; i++) {
+//     // console.log(contestant[i].lastName);
+//     console.log(contestant1.firstName);
+//     console.log(contestant[i].firstName);
+        
+//     }
+  
+// var numberArray = [1, 6, 3, 10, 2, 234, 55, 7, 8, 4];
+//     numberArray.sort(function(a, b) {
+//     return a - b;
+// });
+
+    // console.log(contestant1.lastName);
+    // console.log(contestant2.firstName);
+  
+// for (var i = 1; i < 5; i++) {
+  
+//   console.log("fuckaduck " + [i]);
+// }
+  // console.log(player[i].firstname + player[i].lastName + player[i].healthPoints);
+  //  console.log(player1);
+
+// document.getElementById("character[i]").innerHTML = player[i].firstName + player[i].lastName
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// }
+// var player = {
+  
+//   "contestant":[
+//     {
+//       "name":"Ike Broflovski",
+//       "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+
+//     },
+//     {
+//       "name":"Maggie Simpson",
+//       "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     }, 
+//     {
+//       "name":"Michelle Tanner",
+//      "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     },
+//     {
+//       "name":"Stewie Griffin",
+//      "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     }
+//   ],
+// }
+
+
+
+// var player = {
+  
+//   "contestants":[
+//     {
+//       "name":"Ike Broflovski",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power": ""
+
+//     },
+//     {
+//       "name":"Maggie Simpson",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     }, 
+//     {
+//       "name":"Michelle Tanner",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     },
+//     {
+//       "name":"Stewie Griffin",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     }
+//   ],
+  
+// base_stats
+// {
+//     ["hp_now"] = 300,
+//     ["hp_max"] = 300,
+//     ["mp_now"] = 300,
+//     ["mp_max"] = 300,
+//     ["str"] = 10,
+//     ["spd"] = 10,
+//     ["int"] = 10,
+// }
+
+// var character= function(name) <-- use this with "this" easier to add
+// this.name = name
+// this.role = (attacker; false, defender:false);
+// etc
+
+// $('.img2').click(function() {
+//       window.location.href='column2';
+// });
+
+
+
+
+
+// loop 
+// });
+
+</script>
+
+</body>
+</html>
+
+
+$(document).ready(function() {
+
+  var player = []
+    // chosen: '',
+    // enemies: [],
+    // fighter: '',
+    choices: {
+     player[0] = {
+        name:"Ike Broflovski", 
+        healthPoints:140, 
+        counterAttackPower:5,
+        attackPower: function(fighting) { 
+          fighting.hp = (fighting.hp + 10); }
+    }
+    player[1] = { 
+      name:"Maggie Simpson", 
+      healthPoints:150,
+      counterAttackPower:5, 
+      attackPower: function(fighting) { 
+          fighting.hp = (fighting.hp + 5); }
+    }
+    player[2] = { 
+      name:"Michelle Tanner", 
+      healthPoints:200, 
+      counterAttackPower:5,
+      attackPower: function(fighting) { 
+          fighting.hp = (fighting.hp + 8); }
+    }
+    player[3] = { 
+      name:"Stewie Griffin", 
+      healthPoints:125, 
+      counterAttackPower:5,
+      attackPower: function(fighting) { 
+          fighting.hp = (fighting.hp + 12); }
+    },
+
+// $( "playerArea" ).one( "click", function() {
+//   if ( $( this ).is( "#ike" ) ) {
+//     $('#maggie').clone().appendTo($('.enemyArea'));
+//     $('#michelle').clone().appendTo($('.enemyArea'));
+//     $('#stewie').clone().appendTo($('.enemyArea'));
+//   } else if ( $( this ).is( "#maggie" ) ) {
+//     $('#ike').clone().appendTo($('.enemyArea'));
+//     $('#michelle').clone().appendTo($('.enemyArea'));
+//     $('#stewie').clone().appendTo($('.enemyArea'));
+//   } else if ( $( this ).is( "#michelle" ) ) {
+//     $('#ike').clone().appendTo($('.enemyArea'));
+//     $('#maggie').clone().appendTo($('.enemyArea'));
+//     $('#stewie').clone().appendTo($('.enemyArea'));
+//   } else {
+//     $('#ike').clone().appendTo($('.enemyArea'));
+//     $('#maggie').clone().appendTo($('.enemyArea'));
+//     $('#michelle').clone().appendTo($('.enemyArea'));
+//   }
+// });
+    
+    // console.log(player[0].name + " " + player[1].counterAttackPower + " " + player[2].name + " " + player[3].healthPoints);
+  
+  // $.each(player, function(index, val) {
+  //   console.log(val.name);
+  // });
+
+//   $(".column1").click(function(e) {
+//     e.preventDefault();
+//     $(this).siblings().hide('slow');
+//     console.log($(this).siblings());
+//     $('.column1').not(this).each(function(){
+//     $(this).clone().appendTo($('.column2-0'));
+//   });
+// });
+
+// $(function () {
+
+// if($('#ike').data('clicked')) {
+//     (this).css( "border-color", "red"); 
+//     $('#maggie').appendTo($('.column2-0'));
+//     $('#michelle').appendTo($('.column2-1'));
+//     $('#stewie').appendTo($('.column2-2'));
+// } else {
+//     if($('#maggie').data('clicked')) {
+//     (this).css( "border-color", "red"); 
+//     $('#ike').appendTo($('.column2-0'));
+//     $('#michelle').appendTo($('.column2-1'));
+//     $('#stewie').appendTo($('.column2-2'));
+// });
+// $('playerArea').click(function(event){  
+//     if(event.target.tagName == '#ike')
+//         console.log("ike clicked");
+// });
+
+    
+    $('.playerArea').click(function () {
+      // console.log($(this).attr("id"));
+      
+      // var index = $("playerArea").index(this);  
+      $('.playerArea').not(this).each(function(){
+        console.log($(this).attr("id"));
+        $(this).css( "border-color", "red"); 
+        $(this).clone().appendTo($('.enemyArea'));
+        $(this).remove();
+        
+        // console.log("move to enemy area, this has an index of: " + index);
+      });
+    });
+
+      //NEED FUNCTION TO reognize each element and split up the COLUMNS again:
+      // use remove Class addClass or replaceWith???
+console.log($(this).attr("id"));
+
+    
+    $('.enemyArea').click(function () {
+      $(".playerArea").attr('class', 'enemyArea');
+      // console.log($(this).attr("id"));
+      $(this).css( "border-color", "black"); 
+      $(this).clone().appendTo($('#defenderArea'))
+      $(this).remove();
+      
+      console.log("move to defender area");
+    });
+     
+  
+};
+
+});
+

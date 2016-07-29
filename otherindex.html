@@ -1,0 +1,1312 @@
+$(".column1").click(function(e) {
+    e.preventDefault();
+    $(this).siblings().hide('slow');
+    console.log($(this).siblings());
+    $('.column1').not(this).each(function(){
+    $(this).clone().appendTo($('.column2-0'));
+  });
+});
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV Toddler Cage Match</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrapYeti.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+   <!--link to JavaScript-->
+<!--     <script type="text/javascript" src="assets/javascript/game.js"></script>
+ -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Chau+Philomene+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+  
+  </head>
+  
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <h3>Be very afraid...</h3> 
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav navbar-right">
+                  <a href= "index.html">TV Toddler MMA Cage Match!</a> 
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div>
+ <!-- <div>
+ <img class="PlayerA"  src="assets/images/player1.png"/>
+</div>
+<input type="button" value="Click me to amimate" class="animationButton" />
+
+<br><br><br><br><br><br><br><br>
+
+<div class="addImg">
+</div>
+
+<br><br><br><br><br><br><br><br>
+
+<div class="addImg">
+</div> -->
+
+
+    <div class="container-fluid full">
+      <div class="row">
+      <div class="col-sm-12">
+         <h4>Your character</h4>
+       <div class="col-sm-3 col-xs-6">
+       <p id = "character1"></p>
+
+       <!-- <img class="PlayerA" src="assets/images/player1.png" height="150" width="125"/>
+</div>
+<input type="button" value="Click me to amimate" class="animationButton" /> -->
+               
+<!-- <div data-role="page" id="start" data-title="Home-Button">
+            <div data-role="content"> -->
+                <!-- <a data-role="button" data-inline="true" href="#rowA2">
+                <img src="assets/images/player1.png" alt="Ike" width="150px" height="125" />
+                </a> -->
+            <!-- </div>
+        </div> --><a href="#rowB1">
+                    <img class="img-responsive img-hover img-related" src="assets/images/Player1.png" alt=="Ike">
+                </a>
+        
+       <!--  <div data-role="pag2" id="page2" data-title="Home-Button">
+            <div data-role="content"><img src="assets/images/player1.png" alt="Ike" width="150px" height="125" />
+                test
+                
+         
+            </div>
+        </div -->
+
+                    <!--  <button rowA1="picClick()"><img class="img-responsive img-hover img-related" src="assets/images/player1.png" alt="Ike"></button>
+                 -->
+                <p id = "stats1"></p>
+            </div>
+
+            <div class="col-sm-3 col-xs-6"> <!-- outside boxes green-->
+            <p id = "character2"></p>
+               <div data-role="pag2" id="page2" data-title="Home-Button">
+            <div data-role="content">
+                     <button rowA2="picClick()"><img class="img-responsive img-hover img-related" src="assets/images/player2.png" alt="Maggie"></button>
+                
+                <p id = "stats2">Heath Points:</p>
+            </div> </div>
+        </div>
+
+            <div class="col-sm-3 col-xs-6">
+            <p id = "character3"></p>
+                
+                    <button rowA3="picClick()"><img class="img-responsive img-hover img-related" src="assets/images/player3.png" alt="Michelle"></button>
+                
+                <p id = "stats3">Heath Points:</p>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+            <p id = "character4"></p>
+               
+                     <button rowA4="picClick()"><img class="img-responsive img-hover img-related" src="assets/images/player4.png" alt="Stewie"></button>
+               
+                <p id = "stats4">Heath Points:</p>
+            </div>
+
+                         <!--   <br><br><br><br><br><br><br><br> -->
+
+       <!-- <button onclick="#us"><img class="img-responsive img-hover img-related" src="assets/images/ike.png" alt="Ike"></button> -->
+      <!-- <a href="ike">
+                    <img class="img-responsive img-hover img-related" src="assets/images/ike.png" alt="Basic Portfolio">
+                </a> -->
+           <!--  <img src="assets/images/ike.png" class="img-responsive" id="player1" alt="Hangman drink image">
+            <img src="assets/images/maggie.png" class="img-responsive" id="player2" alt="Hangman drink image">
+            <img src="assets/images/m-tanner.png" class="img-responsive" id="player3" alt="Hangman drink image">
+            <img src="assets/images/stewie.png" class="img-responsive" id="player4" alt="Hangman drink image"> -->
+           
+        </div>
+      </div>
+    </div>
+
+     <div class="container-fluid full">
+      <div class="row">
+      <div class="col-sm-10">
+      <div class="addImg">
+
+      <p id = "enemies"></p> <!-- turn the outsode boxes red-->
+       <div class="col-sm-3 col-xs-6">
+
+      <!--  <a href="#rowC">
+                    <img class="assets/images/player1.png" src="assets/images/Basic-Port-Index.png" alt="Ike">
+                </a>
+                 -->
+                <!--     <button rowB1="picClickAgain()"><img class="img-responsive img-hover img-related" src="" alt="enemy1"></button>
+                 -->
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                     <button rowB2="picClickAgain()"><img class="img-responsive img-hover img-related" src="" alt="enemy2"></button>
+                </a>
+            </div>
+
+            <div class="col-sm-3 col-xs-6">
+                <a href="?">
+                     <button rowB3="picClickAgain()"><img class="img-responsive img-hover img-related" src="" alt="enemy3"></button>
+                </a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+      <div class="container">
+      <div class="row">
+        <!--defender area -->
+        <div class="col-sm-4">
+       <h4>Fight Section</h4>
+       <button RowC="someFunction()">Attack!</button> <!-- turn the outside box black-->
+       <h4>Defender</h4>
+        <!--  <img src="assets/images/player1.png" class="img-responsive" id="Them" alt="Defender"> -->
+         <p id="us-stats"></p>
+        <p id="them-stats"></p>
+        
+        </div>
+
+      <div class="col-sm-5">
+         <!-- place for status updates -->
+
+        <p id="us-stats">update what we did</p>
+        <p id="them-stats">update what they did</p>
+        <p id="win-loss"></p>
+         <!--  defender area -->
+
+         <button onclick="newGame()">Reset</button>
+   
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<script>
+
+
+function player(name, healthPoints, attackPower, counterAttack) {
+    this.name = name;
+    this.healthPoints = healthPoints;
+    this.attackPower = attackPower;
+    this.counterAttack = counterAttack;
+}
+
+var player1 = new player('Ike Broflovski', 150, 5, 5);
+var player2 = new player('Maggie Simpson', 450, 10, 10);
+var player3 = new player('Michelle Tanner', 200, 4, 5);
+var player4 = new player('Stewie Griffin', 120, 6, 10);
+
+document.getElementById("character1").innerHTML = player1.firstName + " " + player1.lastName;
+document.getElementById("character2").innerHTML = player2.firstName + " " + player2.lastName;
+document.getElementById("character3").innerHTML = player3.firstName + " " + player3.lastName;
+document.getElementById("character4").innerHTML = player4.firstName + " " + player4.lastName;
+document.getElementById("stats1").innerHTML = "Health Points: " + player1.healthPoints;
+document.getElementById("stats2").innerHTML = "Health Points: " + player2.healthPoints;
+document.getElementById("stats3").innerHTML = "Health Points: " + player3.healthPoints;
+document.getElementById("stats4").innerHTML = "Health Points: " + player4.healthPoints;
+
+$(".animationButton").click(function(){
+        $(".PlayerA").animate({
+            left:$(".addImg").offset().left,
+            top:$(".addImg").offset().top,
+            width:0,
+            height:0
+          },1000,function(){
+            $(".addImg").append("<img src='assets/images/player1.png' />");
+        });
+    });
+
+if (player2.healthPoints === 140) {
+var url=$('.rowA2').attr("src"); 
+$('<img src="'+ 'assets/images/player1.png' +'" />').appendTo('#RowB2');
+}
+// jQuery('#rowA1').click(function(){
+//   $(this).data('clicked', true);
+// });
+
+// if $('#rowA1').ready(function onClick() {
+// $('button.rowA1').append('button.rowB1');
+
+// }
+
+// $('button.onClick').append('button.picClickAgain');
+// }
+
+// $(document).ready(function onClick() {
+//   var test = 0;
+//   $('body').on('click', '#publish', function(e) {
+//     test = 1;
+//     e.preventDefault;
+//     check();
+//   });
+//   function check(){
+//   if(test == 1) {
+//     console.log("click");
+//     return false;
+//   }
+//   }
+// });
+// if ($('character1').on('click', character1 || character2 || character3 || character4)) {
+//   document.getElementById('enemies').style.display = 'Available enemies';
+// }
+// else {
+// document.getElementById('enemies').style.display = 'none';
+// }
+  
+// for (var i = 1; i < 5; i++) {
+    // console.log(contestant[i].lastName);
+    // console.log(player1.firstName);
+    // console.log(contestant[i].firstName);
+        
+    // }
+  
+// var numberArray = [1, 6, 3, 10, 2, 234, 55, 7, 8, 4];
+//     numberArray.sort(function(a, b) {
+//     return a - b;
+// }
+
+    // console.log(contestant1.lastName);
+    // console.log(contestant2.firstName);
+  
+for (var i = 1; i < 5; i++) {
+  
+  console.log("fuckaduck " + [i]);
+}
+  // console.log(player[i].firstname + player[i].lastName + player[i].healthPoints);
+  //  console.log(player1);
+
+// document.getElementById("character[i]").innerHTML = player[i].firstName + player[i].lastName
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// }
+// var player = {
+  
+//   "contestant":[
+//     {
+//       "name":"Ike Broflovski",
+//       "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+
+//     },
+//     {
+//       "name":"Maggie Simpson",
+//       "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     }, 
+//     {
+//       "name":"Michelle Tanner",
+//      "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     },
+//     {
+//       "name":"Stewie Griffin",
+//      "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     }
+//   ],
+// }
+
+
+
+// var player = {
+  
+//   "contestants":[
+//     {
+//       "name":"Ike Broflovski",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power": ""
+
+//     },
+//     {
+//       "name":"Maggie Simpson",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     }, 
+//     {
+//       "name":"Michelle Tanner",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     },
+//     {
+//       "name":"Stewie Griffin",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     }
+//   ],
+  
+// base_stats
+// {
+//     ["hp_now"] = 300,
+//     ["hp_max"] = 300,
+//     ["mp_now"] = 300,
+//     ["mp_max"] = 300,
+//     ["str"] = 10,
+//     ["spd"] = 10,
+//     ["int"] = 10,
+// }
+
+// var character= function(name) <-- use this with "this" easier to add
+// this.name = name
+// this.role = (attacker; false, defender:false);
+// etc
+
+
+
+
+
+
+
+// loop 
+
+
+</script>
+
+</body>
+</html>
+
+
+OTHER VERSION:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TV Toddler Cage Match</title>
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrapYeti.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+ <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+   <!--link to JavaScript-->
+<!--     <script type="text/javascript" src="assets/javascript/game.js"></script>
+ -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Chelsea+Market' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Chau+Philomene+One' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+  
+  </head>
+  
+  <body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <h3>Be very afraid...</h3> 
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="nav navbar-nav navbar-right">
+                  <a href= "index.html">TV Toddler MMA Cage Match!</a> 
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <div class="container">
+      <!-- <div class="row"> -->
+      <div class="col-sm-12">
+         <h4>Choose Your character</h4>
+           <div class="column1">
+           <!-- <div id = "choice"> -->
+           <span class="charName">Ike Broflovski</span>
+   <div class="img"><img id="img1" src="assets/images/player1.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  </div>  
+   <div class="column1">
+           
+           <span class="charName">Maggie Simpson</span>
+   <div class="img"><img id="img2" src="assets/images/player2.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  </div>  
+
+   <div class="column1">
+          
+           <span class="charName">Michelle Tanner</span>
+   <div class="img"><img id="img3" src="assets/images/player3.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  </div>  
+   <div class="column1">
+           
+           <span class="charName">Stewie Griffen</span>
+   <div class="img"><img id="img4" src="assets/images/player4.png"/> </div>
+   
+    <p id = "stats">Health Points:</p> 
+  <!-- </div>  --> 
+  </div>
+  </div>
+      </div>
+          </div>
+        </div>
+    <!--   </div>
+    </div> -->
+
+     <div class="container">
+      <div class="row">
+      <div class="col-sm-10">
+      <h4>Choose Your Enemy</h4> <!-- turn the outsode boxes red-->
+       <div class="column2">
+           
+           <!-- <span class="charName">Maggie</span>
+   <div class="img"><img id="img5" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div>  
+
+   <div class="column2">
+          
+          <!--  <span class="charName">Michelle</span>
+   <div class="img"><img img id="img6" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div>  
+   <div class="column2">
+           
+          <!--  <span class="charName">Stewie</span>
+   <div class="img"><img img id="img7" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div>  
+  </div>
+        </div>
+      </div>
+    </div>
+
+
+      <div class="container">
+      <!-- <div class="row"> -->
+        <!--defender area -->
+        <div class="col-sm-10">
+       <h4>Rumble!</h4>
+       <div id="column3">
+       <!-- <h4>Defender</h4> -->
+           
+          <!--  <span class="charName">Maggie</span>
+   <div class="img"><img img id="img8" src=""/> </div>
+   
+    <p id = "stats">Health Points:</p>  -->
+  </div> 
+      <!--  <button onclick="someFunction()">Attack!</button> --> <!-- turn the outside box black-->
+       
+        
+        <!--  <p id="us-stats"></p>
+        <p id="them-stats"></p> -->
+        
+<!--         </div>
+
+      <div class="col-sm-5"> -->
+         <!-- place for status updates -->
+<div id="column">
+        <button onclick="someFunction()">Attack!</button>
+        <p id="us-stats">update what we did</p>
+        <p id="them-stats">update what they did</p>
+        <p id="win-loss"></p>
+         <!--  defender area -->
+
+         <button onclick="newGame()">Reset</button>
+   </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<script>
+
+// $(document).ready(function() {
+
+  var player = []
+    // chosen: '',
+    // enemies: [],
+    // fighter: '',
+    choices: {
+     player[0] = {
+        name:"Ike Broflovski", 
+        healthPoints:140, 
+        counterAttackPower:5,
+        attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    }
+    player[1] = { 
+      name:"Maggie Simpson", 
+      healthPoints:150,
+      counterAttackPower:5, 
+      attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    }
+    player[2] = { 
+      name:"Michelle Tanner", 
+      healthPoints:200, 
+      counterAttackPower:5,
+      attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    }
+    player[3] = { 
+      name:"Stewie Griffin", 
+      healthPoints:125, 
+      counterAttackPower:5,
+      attackPower: function(fighting) { 
+          fighting.hp = fighting.hp -10; }
+    },
+
+// },
+// },
+
+
+
+$.each(player, function(index, val) {
+    console.log(val.name);
+    // for (var i = 0; i < 4; i++) {
+// document.getElementById("player." + index).innerHTML = val.name;
+// }
+
+}),
+// for (var i = 0; i < player.length; i++) {
+// console.log(player[i]);
+// }
+//This raises a click event from within another function
+//this would fire when the element pickOtherID was clciked and raise the click event for pickID
+// $('pickID').click(function() {
+//     $('pickOtherID').click();
+// })
+$('.img').on("click","a,img", function (e) {
+      e.preventDefault();
+      // console.log('You Clicked Me');
+
+ // });
+//CLick function to do something
+// $('img').click(function(){
+    // console.log($(this).html());  
+    // if($(this).attr('id') == 'img1')
+    //      {
+    //         console.log('Ike!');
+    //      }
+    //     if($(this).attr('id') == 'img2')
+    //      {
+    //         console.log('Maggie!');
+    //      }
+    //      if($(this).attr('id') == 'img3')
+    //      {
+    //         console.log('Michelle!');
+    //      }
+    //      if($(this).attr('id') == 'img4')
+    //      {
+    //         console.log('Stewie!');
+    //      }
+});
+// };
+
+$(function () {
+    // When one an image within your columns class is clicked
+    $('.column1').click(function () {
+         // Update the source for every one of the images (besides the current one)
+         $('.column1').not(this).each(function(){
+          console.log("not this");
+             // Change the source for all other elements
+             $(this).clone().appendTo($('.column2'))
+  $(this).remove();
+});
+           });
+         });
+    
+$(function () {
+    // When one an image within your columns class is clicked
+    $('.column2').click(function () {
+         // Update the source for every one of the images (besides the current one)
+         // $(this).each(function(){
+          console.log("yes this");
+             // Change the source for all other elements
+             $(this).clone().appendTo($('#column3'))
+  $(this).remove();
+});
+});
+           };
+         // });
+
+// $(document).ready(function() {
+//     $("#column2").on("click", function() {
+//         var row = $(this).closest("#column2").remove().clone();
+//         row.find("img.move-row")
+//             .attr("src", "remove_image_path.jpg")
+//             .attr("alt", "Remove");
+//         $("#table_dest tbody").append(tr);
+//     });
+
+//     $("#column3").on("click"," img.move-row", function() {
+//         var tr = $(this).closest("tr").remove().clone();
+//         tr.find("img.move-row")
+//             .attr("src", "#column3")
+//             .attr("alt", "Move");
+//         $("#table_source tbody").append(tr);
+//     });
+// });
+
+ // $('img').bind('click', function (evt)
+ //       {
+ //         if($(this).attr('id') == 'img1')
+ //         {
+ //            console.log('Ike!');
+ //         }
+ //        if($(this).attr('id') == 'img2')
+ //         {
+ //            console.log('Maggie!');
+ //         }
+ //         if($(this).attr('id') == 'img3')
+ //         {
+ //            console.log('Michelle!');
+ //         }
+ //         if($(this).attr('id') == 'img4')
+ //         {
+ //            console.log('Stewie!');
+ //         }
+ //       });
+
+    // $(".column").click(function(){
+    //     $(this).fadeOut();
+    // });
+
+      // $(selector).select(function)function() {
+      //       $('.char').on('click', function() {
+        // $("img").click(function(){
+        //       $('.choice').html('You: ');
+        //       if ($(this).attr('id') == "player0") {
+        //         console.log(player.choices.player0.name);
+        //       } else if ($(this).attr('id') == "player1") {
+        //         console.log(player.choices.player1.name);
+        //       } else if ($(this).attr('id') == "player2") {
+        //         console.log(player.choices.player2.name);
+        //       } else if ($(this).attr('id') == "player3") {
+        //         console.log(player.choices.player3.name);
+        //       }
+        //     });
+        //   // });
+        //     console.log(player.choices.player3.name);
+
+
+          
+// $.each(player, function () {
+  
+// document.getElementById("character2").innerHTML = val.name;
+// console.log(val.name);
+// console.log("stats[i]" + player[i].healthPoints);
+
+// });
+// console.log("character[i]").innerHTML = player[i].firstName + player[i].lastName
+// console.log("stats[i]").innerHTML = player[i].healthPoints
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+//   }
+// for (var i = 1; i < 5; i++) {
+//     // console.log(contestant[i].lastName);
+//     console.log(contestant1.firstName);
+//     console.log(contestant[i].firstName);
+        
+//     }
+  
+// var numberArray = [1, 6, 3, 10, 2, 234, 55, 7, 8, 4];
+//     numberArray.sort(function(a, b) {
+//     return a - b;
+// });
+
+    // console.log(contestant1.lastName);
+    // console.log(contestant2.firstName);
+  
+// for (var i = 1; i < 5; i++) {
+  
+//   console.log("fuckaduck " + [i]);
+// }
+  // console.log(player[i].firstname + player[i].lastName + player[i].healthPoints);
+  //  console.log(player1);
+
+// document.getElementById("character[i]").innerHTML = player[i].firstName + player[i].lastName
+// document.getElementById("stats[i]").innerHTML = player[i].healthPoints
+// }
+// var player = {
+  
+//   "contestant":[
+//     {
+//       "name":"Ike Broflovski",
+//       "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+
+//     },
+//     {
+//       "name":"Maggie Simpson",
+//       "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     }, 
+//     {
+//       "name":"Michelle Tanner",
+//      "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     },
+//     {
+//       "name":"Stewie Griffin",
+//      "healthPoints":140,
+//       "attackPower": 200,
+//       "counterAttackPower": 200,
+//     }
+//   ],
+// }
+
+
+
+// var player = {
+  
+//   "contestants":[
+//     {
+//       "name":"Ike Broflovski",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power": ""
+
+//     },
+//     {
+//       "name":"Maggie Simpson",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     }, 
+//     {
+//       "name":"Michelle Tanner",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     },
+//     {
+//       "name":"Stewie Griffin",
+//       "health-points":""
+//       "attack-power":""
+//       "counter-attack-power":""
+//     }
+//   ],
+  
+// base_stats
+// {
+//     ["hp_now"] = 300,
+//     ["hp_max"] = 300,
+//     ["mp_now"] = 300,
+//     ["mp_max"] = 300,
+//     ["str"] = 10,
+//     ["spd"] = 10,
+//     ["int"] = 10,
+// }
+
+// var character= function(name) <-- use this with "this" easier to add
+// this.name = name
+// this.role = (attacker; false, defender:false);
+// etc
+
+// $('.img2').click(function() {
+//       window.location.href='column2';
+// });
+
+
+
+
+
+// loop 
+// });
+
+</script>
+
+</body>
+</html>
+
+
+
+ $('.enemyArea').click(function () {
+            if($('#ike').on('click')) {
+              $('#ike').clone().appendTo($('#defenderArea'));
+              $('#ike').css( "border-color", "black"); 
+              $('#ike').remove(); 
+            }
+            else if($('#michelle').on('click')) {
+              $('#michelle').css( "border-color", "black");
+               $('#michelle').clone().appendTo($('#defenderArea'));
+              $('#michelle').remove();
+            }
+            else if($('#maggie').data('clicked')) {
+              $('#maggie').css( "border-color", "black");
+               $('#maggie').clone().appendTo($('#defenderArea'));
+              $('#maggie').remove();
+          }else if ($('#stewie').data('clicked')) {
+            $('#stewie').css( "border-color", "black");
+               $('#stewie').clone().appendTo($('#defenderArea'));
+              $('#stewie').remove();
+            }
+          });
+
+
+$(document).ready(function() {
+
+  // var player = []
+    // chosen: '',
+    // enemies: [],
+    // fighter: '',
+    // choices: {
+    //  player[0] = {
+    //     name:"Ike Broflovski", 
+    //     hp:140, 
+    //     counterAttackPower:5,
+        
+    //     } 
+
+
+    // }
+    // player[1] = { 
+    //   name:"Maggie Simpson", 
+    //   hp:150,
+    //   counterAttackPower:5, 
+    //   } 
+    // }
+    // player[2] = { 
+    //   name:"Michelle Tanner", 
+    //   hp:200, 
+    //   counterAttackPower:5,
+    // }
+
+    // player[3] = { 
+    //   name:"Stewie Griffin", 
+    //   hp:125, 
+    //   counterAttackPower:5,
+    //     }
+
+    // }
+
+    $game = $('#game');
+    $select = $('#select');
+    $choice = $('#choice');
+    $stats = $('#stats');
+    $characters = $('#ike, #maggie, #michelle, #stewie');
+    // $infohead = $('#info-header');
+    $info = $('#info');
+    $reset = $('#reset');
+    $attack = $('#attack');
+
+    function player(first, last, health_points, attack_power, counter_attack_power) {
+    this.name = name;
+    this.healthPoints = healthPoints;
+    this.attackPower = attackPower;
+    this.counterAttack = counterAttack;
+};
+    function createChar() {
+      ike = new player('Ike Broflovski', 150, 5, 5);
+        $('<p id="ike-hp"></p>').appendTo('#ike');
+      maggie = new player('Maggie Simpson', 450, 10, 10);
+        $('<p id="maggie-hp"></p>').appendTo('#maggie');
+      michelle = new player('Michelle Tanner', 200, 4, 5);
+        $('<p id="michelle-hp"></p>').appendTo('#michelle');
+      stewie = new player('Stewie Griffin', 120, 6, 10);
+        $('<p id="stewie-hp"></p>').appendTo('#stewie');
+};
+
+function display() {
+        $choice.html('Select Your Character: ');
+        $stats.empty().hide();
+        $characters.off('click');
+        $characters.show().attr('class').appendTo('#characters');
+        $('#ike-hp').html('HP: ' + ike.healthPoints);
+        $('#maggie-hp').html('HP: ' + maggie.healthPoints);
+        $('#michelle-hp').html('HP: ' + michelle.healthPoints);
+        $('#stewie-hp').html('HP: ' + stewie.healthPoints);
+        $game.hide();
+        $select.show();
+        $attack.show();
+        $reset.hide();
+    };
+     function play() {
+        selectedChar = '';
+        selectedDef = '';
+        firstDefender = false;
+        secondDefender = false;
+        thirdDefender = false;
+        // charSelected = false;
+        defender = false;
+        first = false;
+        second = false;
+        third = false;
+        playerWin = false;
+
+
+        $('#character-hp, #defender-hp, #defender-first, #defender-second').remove();
+
+        createCharacters();
+        display();
+        selectCharacter();
+
+        $infohead.html('TO PLAY');
+        $info.html('Chose a character!');
+    };
+//     attack: function(enemyObj) { 
+//           enemyObj.hp = enemyObj.hp -10; 
+//         }
+//         counterAttack: function(counterA) {
+//          coutnerA.hp = counterA.hp -  20; 
+//        }
+//        attackPower: function(increasePower) {
+
+// }       
+
+//     attack:function(){ 
+//       return Math.floor(Math.random()+this.attack; 
+//       console.log(attack points:);
+//    }, 
+//    isAlive:function(){ 
+//        return this.health>0; 
+//    } 
+
+//    $(‘#attack_button”.).click(function() {
+
+//      ike.attack(michelle);
+
+//      console.log(michelle.hp);
+
+//      michelle.counterA(ike);
+
+//      console.log(ike.hp);
+
+// }
+
+// var gameOver = function(){
+//     if(michelle.isAlive()){
+//         console.log("You lose!");
+//     }
+//     else{
+//         console.log("You Win!- select a new opponent");      
+//     }
+// };
+
+// var game = function(){
+//     while(michelle.isAlive() && ike.isAlive()){
+//        fight();
+//     }
+//     gameOver();    
+// };
+// game();
+
+//Turn this all back on:
+    
+   //  $('.playerArea').click(function () {
+          
+   //    $('.playerArea').not(this).each(function(){
+        
+   //      $(this).css( "border-color", "red"); 
+   //      $(this).removeClass("playerArea");
+   //      // $(this).addClass("enemyArea");
+   //      $(this).clone().appendTo($('.enemyArea'));
+   //      $(this).remove(); 
+        
+       
+
+   //   $('.enemyArea').click(function () {
+   //     console.log($(this).attr("id"));
+   //          if($('#michelle').on('click')) {
+   //            console.log("mich!");
+   //            $('#michelle').css( "border-color", "black");
+   //            $('#michelle').clone().appendTo($('#defenderArea'));
+   //            $('#michelle').remove();
+   //          }
+   //          else if($('#ike').on('click')) {
+   //            console.log("ike!");
+   //            $('#ike').css( "border-color", "black"); 
+   //            $('#ike').clone().appendTo($('#defenderArea'));
+   //            $('#ike').remove(); 
+   //          }
+   //          else if($('#maggie').data('clicked')) {
+   //            console.log("mag!");
+   //            $('#maggie').css( "border-color", "black");
+   //             $('#maggie').clone().appendTo($('#defenderArea'));
+   //            $('#maggie').remove();
+   //        }else {
+   //          $('#stewie').css( "border-color", "black");
+   //          console.log("Stew!");
+   //             $('#stewie').clone().appendTo($('#defenderArea'));
+   //            $('#stewie').remove();
+   //          }
+   //          console.log("move " + ($(this)) + " to defender area");
+   //        });
+   
+   //  });
+   // });
+
+   //TO HERE
+
+
+   // function selectCharacter() {
+   //      $('.char').on('click', function() {
+   //          $game.show();
+   //          $select.hide();
+   //          $info.html('Great choice! Now choose someone to battle against from the avaialble enemies.');
+
+   $('.playerArea').click(function () {
+//           $('#id').click(function(){
+//   $(this).data('charSelected', true);
+//   return;
+// });
+console.log($(this).attr("id"));
+      $('.playerArea').not(this).each(function(){
+        
+        $(this).css( "border-color", "red"); 
+        $(this).removeClass("playerArea");
+        // $(this).addClass("enemyArea");
+        $(this).clone().appendTo($('.enemyArea'));
+        $(this).remove(); 
+
+            // if (charSelected) {
+            //     return;
+            // }
+            // charSelected = true;
+            // Try tying the objects to the DOM elements that were created.
+            // This would significantly reduce code duplication.
+
+            if ($(this).attr('id') == "ike") {
+              $(this).css( "border-color", "black"); 
+                $('#ike').appendTo('#defenderArea');
+                console.log($(this).attr("id"));
+                // $('#maggie, #michelle, #stewie').toggleClass('char enemy').appendTo('#enemies');
+                $('#ike-hp').attr("id", "character-hp");
+                $characters.off('click');
+                selectedChar = ike;
+              }
+            // } else if ($(this).attr('id') == "maggie") {
+            //     $('#maggie').appendTo('#defenderArea');
+            //     $(this).css( "border-color", "black"); 
+            //     // $('#ike, #michelle, #stewie').toggleClass('.char enemy').appendTo('#enemies');
+            //     $('#maggie-hp').attr("id", "character-hp");
+            //     $characters.off('click');
+            //     selectedChar = maggie;
+            // } else if ($(this).attr('id') == "michelle") {
+            //     $('#michelle').appendTo('#defenderArea');
+            //     $(this).css( "border-color", "black"); 
+            //     // $('#ike, #maggie, #stewie').toggleClass('char enemy').appendTo('#enemies');
+            //     $('#michelle-hp').attr("id", "character-hp");
+            //     $characters.off('click');
+            //     selectedChar = michelle;
+            // } else if ($(this).attr('id') == "stewie") {
+            //     $('#stewie').appendTo('#defenderArea');
+            //     $(this).css( "border-color", "black"); 
+            //     // $('#ike, #maggie, #michelle').toggleClass('char enemy').appendTo('#enemies');
+            //     $('#stewie-hp').attr("id", "character-hp");
+            //     $characters.off('click');
+            //     selectedChar = stewie;
+            // }
+            select();
+        });
+    });
+    // Select defender.
+    function select() {
+        $('.enemyArea').on('click', function() {
+            $info.html('Click the ATTACK button to battle your chosen defender.');
+            if (defender) {
+              return;
+            defender = true;
+          }
+            if ($(this).attr('id') == "ike") {
+                $('#ike').toggleClass('enemy defender').appendTo('#defender');
+                $('#ike-hp').attr("id", "defender-hp");
+                $characters.off('click');
+                selectedDef = ike;
+            } else if ($(this).attr('id') == "maggie") {
+                $('#maggie').toggleClass('enemy defender').appendTo('#defender');
+                $('#maggie-hp').attr("id", "defender-hp");
+                $characters.off('click');
+                selectedDef = maggie;
+            } else if ($(this).attr('id') == "michelle") {
+                $('#michelle').toggleClass('enemy defender').appendTo('#defender');
+                $('#michelle-hp').attr("id", "defender-hp");
+                $characters.off('click');
+                selectedDef = michelle;
+            } else if ($(this).attr('id') == "stewie") {
+                $('#stewie').toggleClass('enemy defender').appendTo('#defender');
+                $('#stewie-hp').attr("id", "defender-hp");
+                $characters.off('click');
+                selectedDef = stewie;
+            }
+            if (first === false && second === false && third === false) {
+                firstDefender = true;
+            } else if (second === false && third === false) {
+                secondDefender = true;
+                $stats.empty().hide();
+            } else if (first == true && second === true) {
+                thirdDefender = true;
+                $stats.empty().hide();
+            }
+
+fight();
+
+  function attack(){ 
+      return Math.floor(Math.random()+this.attack); 
+      console.log('attack');
+   }
+   
+
+   $('#attack').click(function() {
+
+     ike.attack(michelle);
+
+     console.log(michelle.hp);
+
+     michelle.counterAttack(ike);
+
+     console.log(ike.hp);
+
+// function check() {
+//         // check if player is defeated
+//         if (selectedChar.healthPoints <= 0) {
+//             $attack.hide();
+//             $reset.show();
+//             $stats.html('<div id="defeat" class="alert alert-danger">You Were Defeated!</div>');
+//             return;
+//         }
+//         // check if defender is defeated
+//         if (thirdDefender === true && selectedDef.isDefeated()) {
+//             playerWin = true;
+//             $attack.hide();
+//             $reset.show();
+//             $info.html('Click the Play Again button to start over.');
+//             $stats.html('<div id="defeat" class="alert alert-success">You Won!</div>');
+//             return;
+//         } else if (secondDefender === true && thirdDefender === false && selectedDef.isDefeated()) {
+//             $('.defender').hide();
+//             $('#defender-hp').attr('id', 'defender-second');
+//             $info.html('On to the last one!');
+//             $stats.html('You defeated ' + selectedDef.name);
+//             second = true;
+//             defender = false;
+//             select();
+//             return;
+//         } else if (secondDefender === false && selectedDef.isDefeated()) {
+//             $('.defender').hide();
+//             $('#defender-hp').attr('id', 'defender-first');
+//             // $info.html
+//             console.log('Nice! Now choose the next defender.');
+//             $stats.html('You defeated ' + selectedDef.name);
+//             first = true;
+//             defender = false;
+//             select();
+//             return;
+//         }
+//     };
+//     // BATTLE!
+//     function fight() {
+//         character.prototype.hit = function(who) {
+//             if (this.healthPoints > 0) {
+//                 this.counter(who.counterAttack);
+//                 who.healthPoints -= this.attackPower;
+//             }
+//             return this;
+//         }
+//         character.prototype.counter = function(howhard) {
+//             this.healthPoints -= howhard;
+//             return this;
+//         }
+//         character.prototype.isDefeated = function() {
+//             return this.healthPoints <= 0;
+//         }
+//         $attack.on('click', function() {
+//             $stats.show();
+//             if (playerWin) {
+//                 return;
+//             }
+//             if (defender === true) {
+//                 selectedChar.hit(selectedDef);
+//                 $stats.html('You attacked ' + selectedDef.name + ' for ' + selectedChar.attackPower + ' damage. <br/>' + selectedDef.name + ' attacked you for ' + selectedDef.counterAttack + ' damage.');
+//                 $('#character-hp').html('HP: ' + selectedChar.healthPoints);
+//                 $('#defender-hp').html('HP: ' + selectedDef.healthPoints);
+//             } else {
+//                 return;
+//             }
+//             selectedChar.attackPower *= 2;
+//             check();
+//         });
+    });
+    // Setup the game for initial play.
+   });
+  };
+    // Restart the game to play a New Game.
+    $('#reset').on('click', function() {
+        play();
+      });
+});
+
+
+
+
+
+
+
+
+$("#btnattack").click(function(){
+         maggie.fight = function(enemy){
+   //assumes enemy is also based on Char
+   hitPerc = (this.hitPerc - enemy.defMod) / 100;
+   if (Math.random() < hitPerc){
+    damage = 0;
+    for (i = 0; i < this.damage; i++){
+     damage += parseInt(Math.random() * 6);
+    } // end for
+    // damage -= enemy.armor;
+    enemy.hp -= damage;
+   console.log('fighting');
+    if (enemy.hp <= 0){
+     console.log('ike' + " is dead!")
+     document.location.href = "";
+    } // end 'enemy dead' if
+   } // end "hit" if
+  } // end fight
+
+
+
+
+
+
+      
+   
+  
+
+
+
+
