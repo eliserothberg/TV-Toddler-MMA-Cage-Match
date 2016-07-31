@@ -1,16 +1,12 @@
 $(document).ready(function() {
 
-  // $playerArea = $('playerArea');
-  // $enemyArea = $('enemyArea');
-  // $defenderArea = $('defenderArea');
-  // $stats = $('#battle-stats');
-  // $characters = $('#ike, #maggie, #michelle, #stewie');
-  // $update = $('#update');
-  // $attack = $('#attack');
-
-var player = '';
-var defender = '';
+var player; 
+var defender;
+var playerHealth;
+var defenderHealth;
 stats = '';
+statusUpdate = '';
+keepPlaying = true;
 
   // var characters = []
     function character(name, healthPoints, counterAttackPower, attackPower) {
@@ -24,180 +20,97 @@ stats = '';
         var maggie = new character('Maggie Simpson', 160, 8, 10);
         var michelle = new character('Michelle Tanner', 200, 5, 10);
         var stewie = new character('Stewie Griffin', 125, 17, 20);
+        var $player = new character();
+        var $defender = new character();
 
         $("#ike").data("character", ike);
         $("#maggie").data("character", maggie);
         $("#michelle").data("character", michelle);
         $("#stewie").data("character", stewie);
-  
-  console.log(maggie.name + ' ' + maggie.attackPower + ' ' + maggie.healthPoints);
-  console.log(stewie);
 
-  console.log('These are ike\'s heath Points: ' + ike.healthPoints);
+        keepPlaying = true;
 
-  
-
-
-function pickPlayer() {
+  function pickPlayer() {
     $(document).on("click", ".playerArea", function () {
-      player = $(this).data("character");
-      // event.preventDefault();
-      // player = $( ).data("character");
-      console.log('Player: ' + player);
+      player = $(this).data('character');
       $(this).removeClass('newArea');
     
-      $('.playerArea').not(this).each(function(){
-        $(this).removeClass('playerArea');
-        $(this).addClass('newArea');
-        $(this).css( 'border-color', 'red'); 
-        $(this).clone().appendTo($('.enemyArea'));
-        $(this).remove(); 
-       
-      
-      });
+        $('.playerArea').not(this).each(function(){
+          $(this).removeClass('playerArea');
+          $(this).addClass('newArea');
+          $('.newArea').find('span').removeClass('playerHealth').addClass('neutralHealth');
+
+          $(this).css( 'border-color', 'red'); 
+          $(this).clone().appendTo($('.enemyArea'));
+          $(this).remove();
+          
+        });
     });
-}
-    pickPlayer();
+  }
+  
+  pickPlayer();
+
+console.log('playerHealth is '+ playerHealth);
 
  
-    function pickDefender () {     
-  
-        $(document).on("click", ".newArea", function () {
-          defender = $(this).data("character");
-         // event.preventDefault();
-         console.log('Defender: ' + defender);
-         
-         $(this).removeClass('newArea');
-         $('<span id="character-health"></span>').appendTo('#defender')
+    function pickDefender () {  
 
+      $(document).on("click", ".newArea", function () {
+        statusUpdate = '';   
+        $("#ike").data("character", ike);
+        $("#maggie").data("character", maggie);
+        $("#michelle").data("character", michelle);
+        $("#stewie").data("character", stewie);
+        
+        defender = $(this).data('character');
+         $(this).removeClass('newArea');
          $(this).css( 'border-color', 'black'); 
          $(this).clone().appendTo($('#defenderArea'));
+         $('#defenderArea').find('span').removeClass('neutralHealth').addClass('defenderHealth');
          $(this).remove(); 
-      
         });
     }
 
+
     pickDefender();
 
+    function attack() {
 
         $('#attack').on('click', function() {
-          console.log('Defender: ' + defender);
-          console.log('Player: ' + player);
-          // console.log('Ike\'s hp ' + ike.healthPoints + ' maggie\'s hp ' + maggie.healthPoints);
-
-          // var player = maggie;
-          // var defender = ike;
-                    // console.log('Defender\'s hp ' + defender.healthPoints + ' Player\'s hp ' + player.healthPoints);
-
-
-          if(( defender.healthPoints > 0) && (player.healthPoints > 0)){      
+  
+          if((defender.healthPoints > 0) && (player.healthPoints > 0)){      
          
             $('#attack').attr('click', function() { 
               var attackAdd = (player.attackPower *= 2);
               defender.healthPoints-= attackAdd;
-              console.log( 'Defender hit for ' + attackAdd + ' points.' );
-              $('#ike-health').html('Health Points: ' + (defender.healthPoints));
+              defenderHealth = defender.healthPoints;
+              $('.defenderHealth').html('Health Points: ' + defender.healthPoints);
 
               var counterAttack = defender.counterAttackPower;
               player.healthPoints -= counterAttack;
-              $('#maggie-health').html('Health Points: ' + (player.healthPoints));
-              console.log('Player hit for ' + counterAttack);
-            
-            $('#statusUpdate').html('Defender hit for ' + attackAdd + ' and Player hit for ' + counterAttack + '!');
+              playerHealth = player.healthPoints;
+              $('.playerHealth').html('Health Points: ' + playerHealth);
+              $('#statusUpdate').html(defender.name + ' hit for ' + attackAdd + ' and ' + player.name + ' hit for ' + counterAttack + '!');
 
-            if(defender.healthPoints <= 0 ) {
-              $('#ike-health').html('Health Points: 0')
-              $('#statusUpdate').html('You killed the baby!' + '<br />' +  
-              'You\'re a terrible person.' + '<br />' + '' + '<br />' + 'Now get over it and click on a new opponent.');
-              $('#win-loss').html('*** Winner ***');
-              $('#defenderArea').empty();
-            }
-            else if(player.healthPoints <= 0) {
-              $('#statusUpdate').html('It\'s all over: you\'re dead.')
-              $('#win-loss').html('Loser!');
-            }
 
-      });
-
-        // function pickNewDefender () {
-
-        //     $('.enemyArea').on('click', function () {
-        //       $('#statusUpdate').html('Next!');
-        //       $('#win-loss').html('');
-
-        //       if($('#stewie').on('click')){
-        //         $('#stewie').css( 'border-color', 'black')
-        //         $('#stewie').clone().appendTo($('#defenderArea'))
-        //         $('#stewie').appendTo('#defender')
-        //         $('#stewie').remove()
-        //         console.log('stewie chosen');
-        //         defender = stewie;
-        //       }
-        //       else if($('#maggie').on('click')) {
-        //       $('#maggie').css( 'border-color', 'black')
-        //       $('#maggie').clone().appendTo($('#defenderArea'))
-        //       $('#maggie').remove()
-        //       $('#maggie').appendTo('#defender')
-        //       console.log('maggie chosen');
-        //       }
-        //       else if($('#michelle').on('click')) {
-        //         $('#michelle').css( 'border-color', 'black')
-        //         $('#michelle').clone().appendTo($('#defenderArea'))
-        //         $('#michelle').remove()
-        //         $('#michelle').appendTo('#defender')
-        //         console.log('michelle chosen');
-        //       }
-        //       else {
-        //         $('#ike').css( 'border-color', 'black')
-        //         $('#ike').clone().appendTo($('#defenderArea'))
-        //         $('#ike').remove()
-        //         $('#ike').appendTo('#defender')
-        //         console.log('ike chosen');
-        //       }
-        //     });   
-        //   };
-        //   pickNewDefender ();
+              if(defender.healthPoints <= 0 ) {
+                $('.defenderHealth').html('Health Points: 0')
+                $('#statusUpdate').html('You killed the baby!' + '<br />' +  
+                'You\'re a terrible person.' + '<br />' + '' + '<br />' + 'Now get over it and click on a new opponent.');
+                $('#win-loss').html('*** Winner ***');
+                $('#defenderArea').empty();
+                keepPlaying = true;
+              }
+              else if(player.healthPoints <= 0) {
+                $('#statusUpdate').html('It\'s all over: you\'re dead.')
+                $('#win-loss').html('Loser!');
+                keepPlaying = false;
+              }
+            });
           };
-
         });
-
-
-      //       $('#attack').on('click', function() {
-      //       console.log('Stewie\'s hp ' + stewie.healthPoints + ' maggie\'s hp ' + maggie.healthPoints);
-
-      //     // var player = maggie;
-      //     // var defender = stewie;
-      //               console.log('Defender\'s hp ' + defender.healthPoints + ' Player\'s hp ' + player.healthPoints);
-
-
-      //     if(( defender.healthPoints > 0) && (player.healthPoints > 0)){      
-         
-      //       $('#attack').attr('click', function() { 
-      //         var attackAdd = (player.attackPower *= 2);
-      //         defender.healthPoints-= attackAdd;
-      //         console.log( 'Defender hit for ' + attackAdd + ' points.' );
-      //         $('#defender-health').html('Health Points: ' + (defender.healthPoints));
-
-      //         var counterAttack = defender.counterAttackPower;
-      //         player.healthPoints -= counterAttack;
-      //         $('#player-health').html('Health Points: ' + (player.healthPoints));
-      //         console.log('Player hit for ' + counterAttack);
+      };
             
-      //       $('#statusUpdate').html('Defender hit for ' + attackAdd + ' and Player hit for ' + counterAttack + '!');
+            attack();
 
-      //       if(defender.healthPoints <= 0 ) {
-      //         $('#defender-health').html('Health Points: 0')
-      //         $('#statusUpdate').html('You killed the baby!' + '<br />' +  
-      //         'You\'re a terrible person.' + '<br />' + '' + '<br />' + 'Now get over it and click on a new opponent.');
-      //         $('#win-loss').html('*** Winner ***');
-      //       }
-      //       else if(player.healthPoints <= 0) {
-      //         $('#statusUpdate').html('It\'s all over: you\'re dead.')
-      //         $('#win-loss').html('Loser!');
-      //       }
-      //     });
-      //   };
-      // });
 });
-  
-

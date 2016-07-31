@@ -64,18 +64,16 @@ button {
 }
 
 #ike,
- #maggie,
- #michelle,
+#maggie,
+#michelle,
 #stewie,
 .playerArea {
- width:150px;
- min-height:125px;    
-/* padding:5px;    
-*/  margin:5px;
- 
+  width:150px;
+  min-height:125px;    
+  margin:5px;
   background:#fff;
   font-size:14px;
- text-align: center;
+  text-align: center;
   display:inline-block;
   position:relative;
   float:left;
@@ -83,20 +81,18 @@ button {
   border-color: green;
   border-width: 10px;
 }
+.playerHealth,
+p {
+  font-size:14px;
+  color: black;
+  text-align: center; 
+}
 
-
- #ike,
- #maggie,
- #michelle,
-#stewie,
-.playerArea span {
-/* border-bottom:1px solid lightgray;
-*/ /*margin:10px 0px 10px 0px;
- padding:10px 0px 10px 0px;*/
- display:block;    
- font-size:16px;
- color: black;
- font-weight:bold;
+span {
+  display:block;    
+  font-size:14px;
+  color: black;
+  font-weight:bold;
 }
 
 .playerArea.imgcontainer img{
@@ -113,7 +109,6 @@ button {
   background:#fff;
   font-size:14px;
   display:inline-block;
-  /*position:relative;*/
   float:right;
   border-style: solid;
   border-color: #0000ff;
