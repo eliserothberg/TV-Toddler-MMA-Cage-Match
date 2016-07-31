@@ -88,7 +88,7 @@ var keepPlaying = true;
               attackPower = player.attackPower;
 
           if((defender.healthPoints > 0) && (player.healthPoints > 0)){  
-              attackAdd = player.attackPower;
+          attackAdd = player.attackPower;
               defender.healthPoints-= attackAdd;    
          
             $('#attack').attr('click', function() { 
@@ -108,15 +108,14 @@ var keepPlaying = true;
                 'You\'re a terrible person.' + '<br />' + '' + '<br />' + 'Now get over it and click on a new opponent.');
                 $('#defenderArea').empty();
                 keepPlaying = true;
-                 console.log("what's in neutralHealth: " + $(".neutralHealth").length);
-                console.log("playerHealthpoints: " + player.healthpoints);
               }
-              else if(playerHealth <= 0) {
-                $('#statusUpdate').html('It\'s all over: you\'re dead.')
+              if(playerHealth <= 0) {
                 $('#win-loss').html('Loser!');
+                $('#statusUpdate').html('It\'s all over: you\'re dead.')
+                $('.enemyArea').empty();
                 keepPlaying = false;
-                
               }
+
               player.attackPower += player.startingAttackPower;
              
               });
