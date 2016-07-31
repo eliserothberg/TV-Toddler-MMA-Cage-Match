@@ -19,10 +19,10 @@ var keepPlaying = true;
       this.startingAttackPower = startingAttackPower;
     };
      
-        var ike = new character('Ike Broflovski', 140, 16, 3, 3);
-        var maggie = new character('Maggie Simpson', 160, 18, 5, 5);
-        var michelle = new character('Michelle Tanner', 200, 15, 6, 6);
-        var stewie = new character('Stewie Griffin', 125, 17, 20, 20);
+        var ike = new character('Ike Broflovski', 140, 14, 3, 3);
+        var maggie = new character('Maggie Simpson', 160, 16, 5, 5);
+        var michelle = new character('Michelle Tanner', 200, 11, 6, 6);
+        var stewie = new character('Stewie Griffin', 125, 13, 10, 10);
        
         $("#ike").data("character", ike);
         $("#maggie").data("character", maggie);
@@ -88,7 +88,7 @@ var keepPlaying = true;
               attackPower = player.attackPower;
 
           if((defender.healthPoints > 0) && (player.healthPoints > 0)){  
-          attackAdd = player.attackPower;
+              attackAdd = player.attackPower;
               defender.healthPoints-= attackAdd;    
          
             $('#attack').attr('click', function() { 
@@ -109,26 +109,23 @@ var keepPlaying = true;
                 $('#defenderArea').empty();
                 keepPlaying = true;
                  console.log("what's in neutralHealth: " + $(".neutralHealth").length);
-                console.log("defenderHealthpoints: " + defender.healthpoints);
+                console.log("playerHealthpoints: " + player.healthpoints);
               }
-              else if(player.healthPoints <= 0) {
+              else if(playerHealth <= 0) {
                 $('#statusUpdate').html('It\'s all over: you\'re dead.')
                 $('#win-loss').html('Loser!');
-                $('#defenderArea').empty();
                 keepPlaying = false;
                 
               }
               player.attackPower += player.startingAttackPower;
              
               });
-              console.log("what's in neutralHealth: " + $(".neutralHealth").length);
-                console.log("what's in defender.healthPoints: " + $(defender.healthPoints).length);
-
-                 if ( ($(".neutralHealth").length ==0) && ($("#defenderHealth").length ==0)) {
-                  $('#defenderArea').empty();
-                  $('#statusUpdate').html('You have vanquished the toddlers!')
-                  $('#win-loss').html('*** Winner ***');
-                }
+          
+              if ( ($(".neutralHealth").length ==0) && ($("#defenderHealth").length ==0) && playerHealth > 0) {
+                $('#defenderArea').empty();
+                $('#statusUpdate').html('You have vanquished the evil toddlers!')
+                $('#win-loss').html('*** Winner ***');
+              }
             };
             
           });
