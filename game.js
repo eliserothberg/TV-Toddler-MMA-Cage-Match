@@ -4,25 +4,26 @@ var player;
 var defender;
 var playerHealth;
 var defenderHealth;
-stats = '';
-statusUpdate = '';
-keepPlaying = true;
+var stats;
+var statusUpdate; 
+var attackAdd;
+var startingAttackPower;
+var keepPlaying = true;
 
-  // var characters = []
-    function character(name, healthPoints, counterAttackPower, attackPower) {
+  // set up the characters
+    function character(name, healthPoints, counterAttackPower, attackPower, startingAttackPower) {
       this.name = name;
       this.healthPoints = healthPoints;
       this.counterAttackPower = counterAttackPower; 
       this.attackPower = attackPower;
+      this.startingAttackPower = startingAttackPower;
     };
      
-        var ike = new character('Ike Broflovski', 140, 6, 7);
-        var maggie = new character('Maggie Simpson', 160, 8, 10);
-        var michelle = new character('Michelle Tanner', 200, 5, 10);
-        var stewie = new character('Stewie Griffin', 125, 17, 20);
-        var $player = new character();
-        var $defender = new character();
-
+        var ike = new character('Ike Broflovski', 140, 16, 3, 3);
+        var maggie = new character('Maggie Simpson', 160, 18, 5, 5);
+        var michelle = new character('Michelle Tanner', 200, 15, 6, 6);
+        var stewie = new character('Stewie Griffin', 125, 17, 20, 20);
+       
         $("#ike").data("character", ike);
         $("#maggie").data("character", maggie);
         $("#michelle").data("character", michelle);
@@ -30,10 +31,13 @@ keepPlaying = true;
 
         keepPlaying = true;
 
-  function pickPlayer() {
-    $(document).on("click", ".playerArea", function () {
-      player = $(this).data('character');
-      $(this).removeClass('newArea');
+    //Pick who represents "you"
+
+    function pickPlayer() {
+      $(document).on("click", ".playerArea", function () {
+
+        player = $(this).data('character');
+        $(this).removeClass('newArea');
     
         $('.playerArea').not(this).each(function(){
           $(this).removeClass('playerArea');
@@ -50,13 +54,14 @@ keepPlaying = true;
   
   pickPlayer();
 
-console.log('playerHealth is '+ playerHealth);
+      //choose your first opponent, on the click, moving them to the defender area
 
- 
-    function pickDefender () {  
+      function pickDefender () {  
 
-      $(document).on("click", ".newArea", function () {
-        statusUpdate = '';   
+      $(document).on("click", ".newArea", function () {  
+        $('#statusUpdate').html('');
+        $('#win-loss').html('');
+
         $("#ike").data("character", ike);
         $("#maggie").data("character", maggie);
         $("#michelle").data("character", michelle);
@@ -72,20 +77,24 @@ console.log('playerHealth is '+ playerHealth);
     }
 
 
-    pickDefender();
+  pickDefender();
+
+    //fight your opponents until you either run out of hp or you reducce all the enemy hp to 0
 
     function attack() {
 
         $('#attack').on('click', function() {
-  
-          if((defender.healthPoints > 0) && (player.healthPoints > 0)){      
+              defenderHealth = defender.healthPoints;
+              attackPower = player.attackPower;
+
+          if((defender.healthPoints > 0) && (player.healthPoints > 0)){  
+          attackAdd = player.attackPower;
+              defender.healthPoints-= attackAdd;    
          
             $('#attack').attr('click', function() { 
-              var attackAdd = (player.attackPower *= 2);
-              defender.healthPoints-= attackAdd;
-              defenderHealth = defender.healthPoints;
+              
               $('.defenderHealth').html('Health Points: ' + defender.healthPoints);
-
+             
               var counterAttack = defender.counterAttackPower;
               player.healthPoints -= counterAttack;
               playerHealth = player.healthPoints;
@@ -97,20 +106,33 @@ console.log('playerHealth is '+ playerHealth);
                 $('.defenderHealth').html('Health Points: 0')
                 $('#statusUpdate').html('You killed the baby!' + '<br />' +  
                 'You\'re a terrible person.' + '<br />' + '' + '<br />' + 'Now get over it and click on a new opponent.');
-                $('#win-loss').html('*** Winner ***');
                 $('#defenderArea').empty();
                 keepPlaying = true;
+                 console.log("what's in neutralHealth: " + $(".neutralHealth").length);
+                console.log("defenderHealthpoints: " + defender.healthpoints);
               }
               else if(player.healthPoints <= 0) {
                 $('#statusUpdate').html('It\'s all over: you\'re dead.')
                 $('#win-loss').html('Loser!');
+                $('#defenderArea').empty();
                 keepPlaying = false;
+                
               }
-            });
-          };
-        });
-      };
+              player.attackPower += player.startingAttackPower;
+             
+              });
+              console.log("what's in neutralHealth: " + $(".neutralHealth").length);
+                console.log("what's in defender.healthPoints: " + $(defender.healthPoints).length);
+
+                 if ( ($(".neutralHealth").length ==0) && ($("#defenderHealth").length ==0)) {
+                  $('#defenderArea').empty();
+                  $('#statusUpdate').html('You have vanquished the toddlers!')
+                  $('#win-loss').html('*** Winner ***');
+                }
+            };
             
+          });
+      };
             attack();
 
 });
